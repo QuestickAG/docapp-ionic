@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+    <ion-button (click)="closeIt()" size="small" color="danger" class="ion-float-right" style="margin-top: 10px; margin-right: 15px">X</ion-button>
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>{{parent}}</ion-card-subtitle>
+      <ion-card-title>{{data.name}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+    {{detail.detail}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -4,31 +4,39 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
+
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss']
 })
 export class AppComponent implements OnInit {
+  constructor() {
+
+
+  }
   public selectedIndex = 0;
+
+
+
   public appPages = [
     {
       title: 'Ionic',
-      url: '/folder/ionic',
+      url: '/category/ionic',
       icon: 'aperture'
     },
     {
       title: 'Python',
-      url: '/folder/Python',
+      url: '/category/Python',
       icon: 'logo-python'
     },
     {
       title: 'JavaScript',
-      url: '/folder/JavaScript',
+      url: '/category/JavaScript',
       icon: 'logo-javascript'
     }
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
   constructor(
     private platform: Platform,
@@ -46,9 +54,14 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    const path = window.location.pathname.split('folder/')[1];
+    const path = window.location.pathname.split('category/')[1];
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
   }
+
+  setIt = (p) => {
+    localStorage.setItem('course', JSON.stringify(p))
+  }
+
 }

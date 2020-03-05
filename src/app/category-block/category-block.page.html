@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Категории</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+  <ion-card  (click)="openTheme(val)" *ngFor="let val of categoryBlock">
+    <ion-card-header>
+      <ion-card-subtitle>{{this.block}}</ion-card-subtitle>
+      <ion-card-title>{{val.name}}</ion-card-title>
+    </ion-card-header>
+
+
+  </ion-card>
+
+</ion-content>

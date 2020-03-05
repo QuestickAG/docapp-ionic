@@ -4,8 +4,11 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
-    pathMatch: 'full'
+    loadChildren: () => import('./category-block/category-block.module').then( m => m.CategoryBlockPageModule)
+  },
+  {
+    path: 'category/:id',
+    loadChildren: () => import('./category-block/category-block.module').then( m => m.CategoryBlockPageModule)
   },
   {
     path: 'folder/:id',
@@ -14,10 +17,10 @@ const routes: Routes = [
   {
     path: 'ionic',
     loadChildren: () => import('./ionic/ionic.module').then( m => m.IonicPageModule)
-  },  {
-    path: 'modal',
-    loadChildren: () => import('./modal/modal.module').then( m => m.ModalPageModule)
   },
+
+
+
 
 
 

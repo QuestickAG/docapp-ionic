@@ -30,3 +30,16 @@ ion-menu-button {
 ion-content ion-toolbar {
   --background: transparent;
 }
+
+
+
+
+  ion-content {
+    display: flex;
+    .block {
+      margin-right: 0;
+      --background: #55a1ff;
+      height: 150px;
+    }
+  }
+

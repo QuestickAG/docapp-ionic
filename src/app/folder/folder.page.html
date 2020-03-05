@@ -4,41 +4,22 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>{{ folder }}</ion-title>
+    <ion-button size="small"  class="ion-float-right" color="none" (click)="goBack()">Назад</ion-button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-<ion-card  href="ionic">
-  <ion-card-header>
-    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    <ion-card-title>Card Title</ion-card-title>
-  </ion-card-header>
+<ion-content >
+  <div *ngFor="let theme of themeList;">
+    <ion-card  (click)="modalWindow(theme)"  *ngIf=" theme.block_id == item.id">
+      <ion-card-header >
+        <ion-card-subtitle>{{folder}}</ion-card-subtitle>
+        <ion-card-title>{{theme.name}}</ion-card-title>
+      </ion-card-header>
 
-  <ion-card-content>
-    Keep close to Nature's heart... and break clear away, once in awhile,
-    and climb a mountain or spend a week in the woods. Wash your spirit clean.
-  </ion-card-content>
-</ion-card>
-<ion-card>
-  <ion-card-header>
-    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    <ion-card-title>Card Title</ion-card-title>
-  </ion-card-header>
+      <ion-card-content>{{theme.desc}}
+      </ion-card-content>
+    </ion-card>
+  </div>
 
-  <ion-card-content>
-    Keep close to Nature's heart... and break clear away, once in awhile,
-    and climb a mountain or spend a week in the woods. Wash your spirit clean.
-  </ion-card-content>
-</ion-card>
-<ion-card>
-  <ion-card-header>
-    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    <ion-card-title>Card Title</ion-card-title>
-  </ion-card-header>
 
-  <ion-card-content>
-    Keep close to Nature's heart... and break clear away, once in awhile,
-    and climb a mountain or spend a week in the woods. Wash your spirit clean.
-  </ion-card-content>
-</ion-card>
 </ion-content>
