@@ -14,6 +14,9 @@ export class CategoryBlockPage implements OnInit {
   public block: string;
   public categoryBlock;
   public category;
+  public idBlock;
+
+
 
   constructor(
       private activatedRoute: ActivatedRoute,
@@ -22,6 +25,8 @@ export class CategoryBlockPage implements OnInit {
   ) {
     this.getData();
     this.category = JSON.parse(localStorage.getItem('course'))
+
+    this.idBlock = this.category.id
   }
 
 
@@ -36,7 +41,9 @@ export class CategoryBlockPage implements OnInit {
 
   ngOnInit() {
     this.block = this.activatedRoute.snapshot.paramMap.get('id');
+    this.block = this.category.title
   }
+
 
 
   async modalWindow() {

@@ -12,30 +12,32 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent implements OnInit {
-  constructor() {
 
-
-  }
   public selectedIndex = 0;
 
 
 
   public appPages = [
     {
-      title: 'Ionic',
-      url: '/category/ionic',
-      icon: 'aperture'
+      id: 1,
+      title: 'JavaScript',
+      url: '/category/JavaScript',
+      icon: 'logo-javascript',
+
     },
     {
+      id: 2,
       title: 'Python',
       url: '/category/Python',
       icon: 'logo-python'
     },
     {
-      title: 'JavaScript',
-      url: '/category/JavaScript',
-      icon: 'logo-javascript'
-    }
+      id: 3,
+      title: 'Ionic',
+      url: '/category/ionic',
+      icon: 'aperture'
+    },
+
   ];
 
   constructor(
@@ -58,6 +60,7 @@ export class AppComponent implements OnInit {
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
+   localStorage.setItem('course', JSON.stringify(this.appPages[0]))
   }
 
   setIt = (p) => {

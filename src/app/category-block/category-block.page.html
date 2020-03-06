@@ -11,13 +11,13 @@
 
 <ion-content >
 
-  <ion-card  (click)="openTheme(val)" *ngFor="let val of categoryBlock">
+  <div *ngFor="let val of categoryBlock">
+  <ion-card  (click)="openTheme(val)" *ngIf="val.category_id === idBlock">
     <ion-card-header>
       <ion-card-subtitle>{{this.block}}</ion-card-subtitle>
       <ion-card-title>{{val.name}}</ion-card-title>
     </ion-card-header>
-
-
   </ion-card>
+  </div>
 
 </ion-content>
